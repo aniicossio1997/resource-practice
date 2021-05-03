@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+body{
+paddig:10px
+margin:30px;
+}
+div {
+margin:30px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  cursor:pointer;
+
+}
+
+div:hover{
+  animation-name: cssAnimation;
+  animation-duration: 1s;
+}
+
+@keyframes cssAnimation {
+from { transform: scale(1) ; }
+to { transform: scale(1.332); }
+}
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+</body>
+</html>
+

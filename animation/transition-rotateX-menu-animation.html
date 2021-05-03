@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.menu_items{
+  display: flex;
+  list-style: none;
+  margin-right: 2em;
+  
+
+}
+.menu_items li{
+  border-radius:3px;
+  margin: 0 5px;
+  border-bottom: 3px solid transparent;
+  display:block;
+
+}
+.menu_items li a{
+  padding: 7px 13px;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  color:#000;
+  border-radius:3px;
+  border-bottom: 3px solid transparent;
+  background-color: #aaaaaa;
+
+}
+
+.element {
+  display: inline-block;
+  background-color: #aaaaaa;
+  height: 100px;
+  width: 100px;
+  font-size: 1px;
+  padding: 1px;
+  color: white;
+  margin-right: 5px;
+  margin-left: 5px;
+
+}
+.element:hover, li:hover{
+cursor:pointer;
+  border-bottom: 3px solid #000;
+  animation: shake 2s;
+
+
+}
+.element:hover:after{
+
+  border-bottom: 3px solid #000;
+
+}
+
+@keyframes shake {
+  0% {
+    transform: rotatex(0);;
+  }
+
+  100% {
+  transform: rotatex(-350deg);
+  }
+}
+
+body, html {
+  height: 100%;
+}
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+<div>
+    <nav class="menu">
+      <ul class="menu_items">
+        <li><a href="#" class="btn_link">Inicio</a></li>
+        <li><a href="#" class="btn_link">Acerca</a></li>
+        <li><a href="#" class="btn_link">Servicio</a></li>
+        <li><a href="#" class="btn_link">Galeria</a></li>
+        <li><a href="#" class="btn_link">Contacto</a></li>
+      </ul>
+
+    </nav>
+</div>
+<hr>
+<div>
+<div class="element">
+</div>
+<div class="element">
+</div>
+<div class="element">
+</div>
+</div>
+
+</body>
+</html>
+
