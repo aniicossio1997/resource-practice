@@ -19,7 +19,6 @@ body {
   grid-template-columns: 50% 50%;
   grid-template-rows: 1fr;
   background-color: #2196F3;
-  border: 1px solid rgb(255, 0, 0);
 }
 .home-grid-container > div{
     max-height: 50vh;
@@ -53,6 +52,7 @@ main {
 footer {
   background-color: #7E57C2;
   grid-area: footer;
+  flex-shrink: 0;
 }
 @media screen and (max-width: 858px){
   .home-grid-container {
@@ -63,6 +63,7 @@ footer {
   
   }
 }
+/*
 @media screen and (max-width: 274px){
 
   main{
@@ -73,3 +74,4 @@ footer {
     bottom: -300px;
   }
 }
+*/

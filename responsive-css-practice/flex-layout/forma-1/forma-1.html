@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+html, body {
+  /* IE 10-11 didn't like using min-height */
+  height: 100%;
+  box-sizing: border-box;
+
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+}
+.footer {
+  flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 20px;
+}
+
+body {
+  margin: 0;
+  font: 16px Sans-Serif;
+}
+
+footer {
+  background: #42A5F5;
+  color: white;
+}
+nav{
+  padding: 30px;
+}
+/* GRID */
+.home-grid-container {
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+  background-color: #2196F3;
+}
+.home-grid-container > div{
+    max-height: 50vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+}
+img{
+  max-width:100%;
+  max-height: 100%;
+}
+nav {
+  background-color: #7E57C2;
+}
+@media screen and (max-width: 858px){
+  .home-grid-container {
+    grid-template-columns: auto;
+  }
+  .home-grid-container > div{
+    height: auto;
+  
+  }
+}
+</style>
+<body>
+  <main class="content">
+    <nav>Some navigation buttons</nav>
+
+    <section class="home-grid-container">
+      <div class="home_content_text">
+        <h1>Bienvenido</h1>
+        <p>Lorem Quaerat molestias odio soluta. Quasi, illo?</p>
+      </div>
+      <div class="home_img">
+        <img src="../undraw_High_five_u364.svg" alt="img-home">
+      </div>
+    </section>
+
+  </main>
+  
+  <footer class="footer">
+    Footer 
+  </footer>
+</body>
+</html>

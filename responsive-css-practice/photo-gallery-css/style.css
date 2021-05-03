@@ -1,0 +1,42 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.grid-container {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25vh, 1fr));
+  grid-gap: 1em;
+ grid-auto-rows: minmax(25vh,auto);
+
+
+}
+
+.grid-container > div {
+border: 1 solid #000;
+/*  max-height: 30vh;
+  text-align: center;
+  justify-items: stretch;
+  align-items: stretch;
+ 
+  */
+  background-color: aqua;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+}
+.grid-container > div:hover{
+  cursor: pointer;
+  animation-name: cssAnimation;
+  animation-duration: 1s;
+}
+
+@keyframes cssAnimation {
+from { transform: scale(1) ; }
+to { transform: scale(1.332); }
+}
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+
+}
