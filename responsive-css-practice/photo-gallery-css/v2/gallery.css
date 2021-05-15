@@ -1,0 +1,92 @@
+body{
+  /* background:
+   linear-gradient(to bottom left, #fffcfc 50%, #97e2ff 50%); */
+
+}
+/*
+ * Hard-stop gradients
+ * Create angles for css shapes with linear-gradients using a single color for 0-50% and another for 50-100% 
+ */
+
+.gallery-grid-container {
+  /* margin: 100px;
+  max-width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(28vh, 1fr));
+  grid-gap: 1.6em;
+  grid-auto-rows: minmax(28vh, auto);
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+/* .gallery-grid-container>div {
+
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 100%;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.4);
+  animation-duration: 0.8s;
+} */
+
+.gallery-img{
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow:0 0 10px 5px rgba(0, 0, 0, 0.5); 
+  cursor: pointer;
+  border: 3mm ridge rgba(251, 251, 251, 0.4);
+}
+
+.gallery-img {
+
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gallery-img::after {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gallery-img:hover {
+  -webkit-transform: scale(1.20, 1.20);
+  transform: scale(1.20, 1.20);
+}
+
+.gallery-img:hover::after {
+    opacity: 1;
+}
+
+@keyframes cssAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.332);
+
+  }
+}
+
+@keyframes example {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}

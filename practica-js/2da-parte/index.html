@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style></style>
+  <body>
+    <h1>hola</h1>
+    <ul id="lista">ul #1</ul>
+    <ul id="ul-2">ul #2</ul>
+    <template id="template-li">
+    <li class="list"><b>Nombre: </b><span class="text-danger">${item}</span></li>
+  </template>
+    <script>
+      const lista = document.querySelector("#lista");
+      const arrayLista = ["item 1", "item 2", "item 3", "item 4"];
+
+      // const fragment = document.createDocumentFragment()
+
+      // arrayLista.forEach(item =>{
+      //   const li = document.createElement('li')
+      //   li.classList.add('list')
+
+      //   const b =document.createElement('b')
+      //   b.textContent ='nombre: '
+
+      //   const span =document.createElement('span')
+      //   span.classList.add('text-danger')
+      //   span.textContent =item
+
+      //   li.appendChild(b)
+      //   li.appendChild(span)
+      //   fragment.appendChild(li)
+      // })
+      // lista.appendChild(fragment)
+      //   opsion dos:
+
+      // let fragment = "";
+      // arrayLista.forEach((item) => {
+      //   fragment += `<li class="list"><b>Nombre: </b><span class="text-danger">${item}</span></li>`;
+        
+      // });
+      // lista.innerHTML=fragment
+
+      const list2 = document.querySelector("#ul-2");
+
+      const template = document.querySelector('#template-li').content
+      const fragment =document.createDocumentFragment()
+      arrayLista.forEach(item =>{
+        template.querySelector('.list span').textContent =item
+        const clone =template.cloneNode(true)
+        fragment.appendChild(clone)
+      })
+      list2.appendChild(fragment)
+       
+    </script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+*{
+  padding: 0;
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+a {
+  color: #000;
+}
+
+/* header */
+
+.header {
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". ."
+    "lista lista";
+    background-color: rgb(236, 236, 236);
+
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.3);
+
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header li a {
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+
+
+.header .logo {
+  display: block;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+/* menu */
+
+ul{
+  clear: both;
+
+  transition: max-height .3s linear;
+}
+ul.show{
+  position: relative;
+  max-height: 1000px;
+}
+.btn_menu{
+  display: none;
+}
+/* menu icon */
+
+
+
+
+
+/* menu btn */
+
+
+/* 48em = 768px */
+.btn_menu{
+  cursor: pointer;
+}
+@media screen and (max-width:900px) {
+  .menu{
+    display: block;
+    flex-direction: column;
+}
+.header li a {
+  
+  border-right: 1px solid transparent;
+}
+  .header{
+    display: grid;
+  grid-template-areas:
+  '. . '
+  'list list';
+  grid-gap: 10px;
+  padding: 10px;
+  
+  
+  }
+  .btn_menu{
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    align-content: stretch;
+
+    align-items: flex-start;
+    padding-right: 20px;
+
+  }
+  .menu{
+    grid-area: list;
+  }
+  .header > * {
+  text-align: center;
+}
+  .header li {
+    padding: 20px;
+  }
+  .menu {
+    clear: none;
+    max-height: 0;
+    
+  }
+
+
+}
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <a href="" class="logo">CSS Nav</a>
+    <span class="btn_menu"/> menu</span>
+    <ul class="menu ">
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <script>
+
+  const btn_menu = document.querySelector('.btn_menu')
+  const menu_items = document.querySelector('.menu')
+
+  console.log(btn_menu)
+  console.log(menu_items)
+
+  if(btn_menu){
+    
+    btn_menu.addEventListener('click', () =>{
+    menu_items.classList.toggle('show')
+     })
+  }
+  </script>
+</body>
+</html>
