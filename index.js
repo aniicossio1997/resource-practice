@@ -81,6 +81,8 @@ card1.addLink("divs animation", "animation/animation-speed.html");
 let card2 = new Card("responsive");
 card2.addLink("grid layout responsive", "responsive-css-practice/photo-gallery-css/gallery.html");
 card2.addLink("gallery responsive", "responsive-css-practice/photo-gallery-css/gallery.html");
+card2.addLink("menu v1 simple flex", "responsive-css-practice/menu/version-1/index.html");
+card2.addLink("menu v2 with grid and flexbox", "responsive-css-practice/menu/version-2/p1.html");
 
 
 objects = new Array();
