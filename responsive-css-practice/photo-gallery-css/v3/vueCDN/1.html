@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <titulo></titulo>
+    </div>
+
+
+
+
+    <script>
+      Vue.component('titulo',{
+        template: //html
+        `<div>
+          <h1>Numero: {{ numero }}</h1>
+          <hijo></hijo>
+        </div>`,
+        computed:{
+          ...Vuex.mapState(['numero'])
+        }
+      })
+      Vue.component('hijo',{
+        template: //html
+        `<div>
+          <button @click="aumentar">+</button>
+          <button @click="disminuir(2)">-</button>
+          <button @click="obtenerCursos">obtener Cursos</button>
+          <button @click="limpiarCursos">limpiar Cursos</button>
+
+
+          <h1>numero: {{ numero }}</h1>
+        <ul v-for="item of cursos">
+          <li>{{item.nombre}}</li>
+        </ul>
+          </div>`
+          ,
+          computed:{
+          ...Vuex.mapState(['numero','cursos'])
+        },
+        methods:{
+          ...Vuex.mapMutations(['aumentar','disminuir','limpiarCursos']),
+          ...Vuex.mapActions(['obtenerCursos'])
+        }
+      });
+      //mapeando las acciones
+
+      const store = new Vuex.Store({
+        state:{
+          numero:10,
+          cursos: []
+        },
+        mutations:{
+          aumentar(){
+            this.state.numero ++
+          },
+          disminuir(state,n){
+            state.numero -=n
+          },
+          llenarCursos(state,cursosAccion){
+            state.cursos = cursosAccion
+            //llama a los cursoscursos que se ejecuta en la parte de accion
+            //llama al commit cursos
+          },
+          limpiarCursos(state){
+            state.cursos=[]
+          }
+        },
+        actions:{
+          obtenerCursos: async function({ commit }){
+            const data = await fetch('api.json');
+            const cursos = await data.json();
+            commit('llenarCursos',cursos)
+          }
+        }
+      });
+
+      new Vue({
+        el: '#app',
+        store:store
+      })
+    </script>
+  </body>
+</html>

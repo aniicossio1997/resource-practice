@@ -1,0 +1,9 @@
+[
+  {"nombre":"HTML","id":1},
+  {"nombre":"CSS","id":2},
+  {"nombre":"JAVASCRIPT","id":3},
+  {"nombre":"RUBY","id":4},
+  {"nombre":"PYTHON","id":5},
+  {"nombre":"JAVA","id":6}
+
+]
